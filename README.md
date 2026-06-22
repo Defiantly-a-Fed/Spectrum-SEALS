@@ -12,11 +12,11 @@ The laptop currently acts as the temporary operator core during development.
 
 It is used for:
 
-* local dashboards
-* Python testing tools
-* SDR command-line tools
-* evidence review
-* GitHub/project documentation
+- local dashboards
+- Python testing tools
+- SDR command-line tools
+- evidence review
+- GitHub/project documentation
 
 The long-term core target is a Raspberry Pi 5 running the main services.
 
@@ -26,15 +26,15 @@ Node 1 is the ESP32/Pi Zero sidecar node.
 
 Current purpose:
 
-* Ghost Seal firmware control
-* USB serial command bridge
-* GPS/status/event reporting
-* future UART backbone support
-* future Marauder-compatible command parity
+- Ghost Seal firmware control
+- USB serial command bridge
+- GPS/status/event reporting
+- future UART backbone support
+- future Marauder-compatible command parity
 
 Current working chain:
 
-```text
+```
 Ghost Seal ESP32
 → USB serial
 → Node 1 Pi Zero
@@ -44,7 +44,7 @@ Ghost Seal ESP32
 
 Future chain:
 
-```text
+```
 Ghost Seal ESP32
 → Node 1 Pi Zero
 → UART backbone
@@ -57,21 +57,21 @@ Node 2 is the RF evidence and SDR lane.
 
 Current purpose:
 
-* RTL-SDR / NESDR receive evidence
-* HackRF sweep evidence
-* automatic RF watch
-* basic drone-band RF activity scoring
-* spectrum/waterfall evidence export
+- RTL-SDR / NESDR receive evidence
+- HackRF sweep evidence
+- automatic RF watch
+- basic drone-band RF activity scoring
+- spectrum/waterfall evidence export
 
 Current Node 2 repo:
 
-```text
+```
 Spectrum-SEALS-Node2
 ```
 
 Current milestone:
 
-```text
+```
 RAGNAR V4 Autowatch
 ```
 
@@ -85,10 +85,10 @@ RTL-SDR / NESDR lane.
 
 Used for:
 
-* `rtl_power` sweeps
-* 433 MHz observation
-* 902–928 MHz observation
-* archived `rtl_433` decode review
+- `rtl_power` sweeps
+- 433 MHz observation
+- 902–928 MHz observation
+- archived `rtl_433` decode review
 
 ### SEAL-HRF
 
@@ -96,30 +96,30 @@ HackRF lane.
 
 Used for:
 
-* `hackrf_info` device detection
-* `hackrf_sweep` capture
-* 915 MHz sweep coverage
-* 2.4 GHz sweep coverage
-* 5.8 GHz sweep coverage
+- `hackrf_info` device detection
+- `hackrf_sweep` capture
+- 915 MHz sweep coverage
+- 2.4 GHz sweep coverage
+- 5.8 GHz sweep coverage
 
 ## Design rules
 
-* Real evidence must be separated from simulated evidence.
-* A detector may report RF activity, but should not claim confirmed drone identity without stronger supporting signatures.
-* Node commands and JSON events should stay consistent across USB serial, UART, HTTP, and MQTT transports.
-* Every node should eventually expose a UART-ready control/data path to the Pi 5 core.
-* Missing optional tools should degrade gracefully instead of breaking the whole system.
+- Real evidence must be separated from simulated evidence.
+- A detector may report RF activity, but should not claim confirmed drone identity without stronger supporting signatures.
+- Node commands and JSON events should stay consistent across USB serial, UART, HTTP, and MQTT transports.
+- Every node should eventually expose a UART-ready control/data path to the Pi 5 core.
+- Missing optional tools should degrade gracefully instead of breaking the whole system.
 
 ## Current milestone
 
 The current milestone is a working Node 2 RF evidence console with:
 
-* RTL-SDR hardware detection
-* HackRF hardware detection
-* real sweep capture
-* spectrum/waterfall evidence
-* basic RAGNAR V4 drone-band activity scoring
-* evidence JSON export
+- RTL-SDR hardware detection
+- HackRF hardware detection
+- real sweep capture
+- spectrum/waterfall evidence
+- basic RAGNAR V4 drone-band activity scoring
+- evidence JSON export
 
 ## Next milestones
 
